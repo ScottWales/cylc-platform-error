@@ -1,0 +1,4 @@
+[platforms]
+[[dm]]
+    hosts = localhost
+    job runner = background

@@ -1,0 +1,11 @@
+#!jinja2
+[scheduling]
+initial cycle point = 20200101T0000Z
+[[graph]]
+    R1 = install_cold
+
+[runtime]
+[[install_cold]]
+    platform = dm
+    execution time limit = PT10M
+
