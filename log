@@ -1,0 +1,111 @@
+$ cylc validate /scratch/hc46/saw562/tmp/cylc-platform/test-flow
+DEBUG - Reading file /scratch/hc46/saw562/tmp/cylc-platform/test-flow/flow.cylc
+DEBUG - Loading site/user config files
+DEBUG - Reading file /scratch/hc46/saw562/tmp/cylc-platform/site/flow/global.cylc
+DEBUG - Reading file /home/562/saw562/.cylc/flow/global.cylc
+DEBUG - Loading site/user config files
+DEBUG - Reading file /scratch/hc46/saw562/tmp/cylc-platform/site/flow/global.cylc
+DEBUG - Reading file /home/562/saw562/.cylc/flow/global.cylc
+DEBUG - ran rose in 0.25134s
+DEBUG - Processing with Jinja2
+DEBUG - Setting Jinja2 template variables:
+    + CYLC_TEMPLATE_VARS={'ROSE_VERSION': '2.3.0', 'ROSE_ORIG_HOST': 'gadi-login-02.gadi.nci.org.au', 'ROSE_SUITE_VARIABLES': {'ROSE_VERSION': '2.3.0', 'ROSE_ORIG_HOST': 'gadi-login-02.gadi.nci.org.au', 'ROSE_SUITE_VARIABLES': {...}}, 'CYLC_VERSION': '8.3.2', 'CYLC_TEMPLATE_VARS': {...}}
+    + CYLC_VERSION=8.3.2
+    + ROSE_ORIG_HOST=gadi-login-02.gadi.nci.org.au
+    + ROSE_SUITE_VARIABLES={'ROSE_VERSION': '2.3.0', 'ROSE_ORIG_HOST': 'gadi-login-02.gadi.nci.org.au', 'ROSE_SUITE_VARIABLES': {...}}
+    + ROSE_VERSION=2.3.0
+DEBUG - Expanding [runtime] namespace lists and parameters
+DEBUG - Parsing the runtime namespace hierarchy
+DEBUG - Parsing [special tasks]
+DEBUG - Parsing the dependency graph
+Instantiating tasks to check trigger expressions
+  + 20200101T0000Z/install_cold ok
+Valid for cylc-8.3.2
+$ cylc install /scratch/hc46/saw562/tmp/cylc-platform/test-flow
+DEBUG - Loading site/user config files
+DEBUG - Reading file /scratch/hc46/saw562/tmp/cylc-platform/site/flow/global.cylc
+DEBUG - Reading file /home/562/saw562/.cylc/flow/global.cylc
+DEBUG - ran rose in 0.00282s
+DEBUG - ran rose_opts in 0.05157s
+DEBUG - [cylc.flow.install_plugins.log_vc_info] $ svn info --non-interactive
+DEBUG - [cylc.flow.install_plugins.log_vc_info] Source dir /scratch/hc46/saw562/tmp/cylc-platform/test-flow is not a svn repository
+DEBUG - [cylc.flow.install_plugins.log_vc_info] $ git describe --always --dirty
+DEBUG - [cylc.flow.install_plugins.log_vc_info] $ git rev-parse HEAD
+DEBUG - [cylc.flow.install_plugins.log_vc_info] $ git status --short
+DEBUG - [cylc.flow.install_plugins.log_vc_info] git repository detected
+DEBUG - [cylc.flow.install_plugins.log_vc_info] $ git diff HEAD \
+        /scratch/hc46/saw562/tmp/cylc-platform/test-flow
+DEBUG - ran log_vc_info in 0.36142s
+INSTALLED test-flow/run4 from /scratch/hc46/saw562/tmp/cylc-platform/test-flow
+DEBUG - zmq:send {'command': 'graphql', 'args': {'request_string': 'query { workflows(ids: ["test-flow/run3"]) { \nstatus\n } }', 'variables': {}}, 'meta': {'prog': 'vip', 'host': 'gadi-login-02.gadi.nci.org.au', 'comms_method': 'zmq'}}
+INFO - Removed contact file for test-flow/run3 (workflow no longer running).
+WARNING - Workflow not running: test-flow/run3
+$ cylc play --debug --no-detach test-flow/run4
+
+ ▪ ■  Cylc Workflow Engine 8.3.2
+ ██   Copyright (C) 2008-2024 NIWA
+▝▘    & British Crown (Met Office) & Contributors
+
+DEBUG - /home/562/saw562/cylc-run/test-flow/run4/log/scheduler: directory created
+DEBUG - /home/562/saw562/cylc-run/test-flow/run4/log/job: directory created
+DEBUG - /home/562/saw562/cylc-run/test-flow/run4/share: directory created
+DEBUG - /home/562/saw562/cylc-run/test-flow/run4/work: directory created
+INFO - Extracting job.sh to /home/562/saw562/cylc-run/test-flow/run4/.service/etc/job.sh
+DEBUG - Starting
+DEBUG - Configure curve: *[/home/562/saw562/cylc-run/test-flow/run4/.service/client_public_keys]
+INFO - Workflow: test-flow/run4
+DEBUG - Reading file /home/562/saw562/cylc-run/test-flow/run4/flow.cylc
+DEBUG - Loading site/user config files
+DEBUG - Reading file /scratch/hc46/saw562/tmp/cylc-platform/site/flow/global.cylc
+DEBUG - Reading file /home/562/saw562/.cylc/flow/global.cylc
+DEBUG - ran rose in 0.01819s
+DEBUG - Processing with Jinja2
+DEBUG - Setting Jinja2 template variables:
+    + CYLC_TEMPLATE_VARS={'ROSE_VERSION': '2.3.0', 'ROSE_ORIG_HOST': 'gadi-login-02.gadi.nci.org.au', 'ROSE_SUITE_VARIABLES': {'ROSE_VERSION': '2.3.0', 'ROSE_ORIG_HOST': 'gadi-login-02.gadi.nci.org.au', 'ROSE_SUITE_VARIABLES': {...}}, 'CYLC_VERSION': '8.3.2', 'CYLC_TEMPLATE_VARS': {...}}
+    + CYLC_VERSION=8.3.2
+    + ROSE_ORIG_HOST=gadi-login-02.gadi.nci.org.au
+    + ROSE_SUITE_VARIABLES={'ROSE_VERSION': '2.3.0', 'ROSE_ORIG_HOST': 'gadi-login-02.gadi.nci.org.au', 'ROSE_SUITE_VARIABLES': {...}}
+    + ROSE_VERSION=2.3.0
+DEBUG - Processed configuration dumped: /home/562/saw562/cylc-run/test-flow/run4/log/config/flow-processed.cylc
+DEBUG - Expanding [runtime] namespace lists and parameters
+DEBUG - Parsing the runtime namespace hierarchy
+DEBUG - Parsing [special tasks]
+DEBUG - Parsing the dependency graph
+INFO - Scheduler: url=tcp://gadi-login-02.gadi.nci.org.au:43069 pid=1899321
+INFO - Workflow publisher: url=tcp://gadi-login-02.gadi.nci.org.au:43100
+INFO - Run: (re)start number=1, log rollover=1
+INFO - Cylc version: 8.3.2
+INFO - Run mode: live
+INFO - Initial point: 20200101T0000Z
+INFO - Final point: None
+INFO - Cold start from 20200101T0000Z
+INFO - New flow: 1 (original flow from 20200101T0000Z) 2024-07-16T13:10:09
+DEBUG - Runahead: base point 20200101T0000Z
+DEBUG - Runahead limit: 20200101T0000Z
+DEBUG - [20200101T0000Z/install_cold:waiting(runahead)] added to active task pool
+INFO - [20200101T0000Z/install_cold:waiting(runahead)] => waiting
+INFO - [20200101T0000Z/install_cold:waiting] => waiting(queued)
+DEBUG - Loaded main loop plugin "health check":
+    * health_check
+DEBUG - Loaded main loop plugin "reset bad hosts":
+    * reset_bad_hosts
+INFO - [20200101T0000Z/install_cold:waiting(queued)] => waiting
+INFO - [20200101T0000Z/install_cold:waiting] => preparing
+ERROR - [jobs-submit cmd] (platform not defined)
+    [jobs-submit ret_code] 1
+    [jobs-submit err] No matching platform "dm" found
+DEBUG - [20200101T0000Z/install_cold/01:preparing] (internal)submission failed
+CRITICAL - [20200101T0000Z/install_cold/01:preparing] submission failed
+INFO - [20200101T0000Z/install_cold/01:preparing] => submit-failed
+WARNING - [20200101T0000Z/install_cold/01:submit-failed] did not complete the required outputs:
+    ⨯ ⦙  succeeded
+DEBUG - 20200101T0000Z/install_cold -triggered off [] in flow 1
+ERROR - Incomplete tasks:
+    * 20200101T0000Z/install_cold did not complete the required outputs:
+      ⨯ ⦙  succeeded
+CRITICAL - Workflow stalled
+WARNING - PT1H stall timer starts NOW
+DEBUG - main_loop [run] cylc.flow.main_loop.health_check:health_check
+DEBUG - main_loop [end] cylc.flow.main_loop.health_check:health_check (0.001s)
+DEBUG - main_loop [run] cylc.flow.main_loop.reset_bad_hosts:reset_bad_hosts
+DEBUG - main_loop [end] cylc.flow.main_loop.reset_bad_hosts:reset_bad_hosts (0.000s)
